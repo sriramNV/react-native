@@ -13,8 +13,10 @@ const LoadingSpinner = () => {
     <LinearGradient colors={colors.gradients.background} style={homeStyles.container}>
         <View style={homeStyles.loadingContainer}>
             <ActivityIndicator size="large" color={colors.primary} />
-            <Text style={homeStyles.loadingText}>Loading your Todos ..........</Text>
+            <Text style={homeStyles.loadingText}>Loading your Todos...</Text>
         </View>
     </LinearGradient>
   )
 }
+
+export default LoadingSpinner;

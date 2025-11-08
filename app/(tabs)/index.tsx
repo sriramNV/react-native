@@ -8,6 +8,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from 'expo-linear-gradient';
 import Header from "@/components/Header";
 import TodoInput from "@/components/TodoInput";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 export default function Index() {
 
@@ -29,11 +30,7 @@ export default function Index() {
         <Header />
         <TodoInput />
         
-        {
-          todos?.map(todo => (
-            <Text key={todo._id} style={homestyles.todoText}>{todo.text}</Text>
-          ))
-        }
+        
 
       </SafeAreaView>
     </LinearGradient>
