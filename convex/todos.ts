@@ -62,7 +62,7 @@ export const clearTodos = mutation({
             await ctx.db.delete(todo._id);
         }
 
-        return {deletedConunt: todos.length};
+        return {deletedCount: todos.length};
     },
 });
 
