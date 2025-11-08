@@ -7,6 +7,7 @@ import { StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-nativ
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from 'expo-linear-gradient';
 import Header from "@/components/Header";
+import TodoInput from "@/components/TodoInput";
 
 export default function Index() {
 
@@ -20,6 +21,7 @@ export default function Index() {
       <StatusBar barStyle={colors.statusBarStyle} />
       <SafeAreaView style={homestyles.safeArea}>
         <Header />
+        <TodoInput />
         <Text style={homestyles.todoText}>Edit app/index.tsx to edit this screen1234.</Text>
         <Text style={homestyles.todoText}>Hello</Text>
         <TouchableOpacity onPress={toggleDarkMode}>
