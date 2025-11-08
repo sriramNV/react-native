@@ -14,6 +14,12 @@ export default function Index() {
   const { toggleDarkMode, colors } = useTheme();
   const homestyles = createHomeStyles(colors);
 
+  const todos = useQuery(api.todos.getTodos);
+
+  const isLoading = todos === undefined;
+
+  if (isLoading) return <LoadingSpinner />
+
 
   return (
     <LinearGradient colors={colors.gradients.background} style={homestyles.container}>
@@ -22,11 +28,13 @@ export default function Index() {
       <SafeAreaView style={homestyles.safeArea}>
         <Header />
         <TodoInput />
-        <Text style={homestyles.todoText}>Edit app/index.tsx to edit this screen1234.</Text>
-        <Text style={homestyles.todoText}>Hello</Text>
-        <TouchableOpacity onPress={toggleDarkMode}>
-          <Text style={homestyles.todoText}>Toggle the mode</Text>
-        </TouchableOpacity>
+        
+        {
+          todos?.map(todo => (
+            <Text key={todo._id} style={homestyles.todoText}>{todo.text}</Text>
+          ))
+        }
+
       </SafeAreaView>
     </LinearGradient>
   );
